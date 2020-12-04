@@ -1,0 +1,1 @@
+Repositorio donde se dearrollara el Diseño de la Base de Datos, Diseño Mobile, el archivo del proyecto y la presentacion de la exposición del proyecto
