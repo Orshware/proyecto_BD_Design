@@ -1,0 +1,49 @@
+proveedores:
+  razón social 
+  domicilio
+  nombre
+  teléfonos
+
+clientes:
+  razón social
+  nombre
+  domicilio
+  emails NOT NULL
+
+producto:
+  código de barras
+  precio
+  
+  -regalos:
+  -articulo de papeleria:
+  -impresiones:
+  -recargas:
+
+venta:
+  productos  --Es Multivaluado
+  numero de venta
+  fecha
+  cantidad total
+
+inventario:  
+
+
+#relacion
+se-vendio:
+  precio al que fue ventido
+  fecha de venta
+  cantidad
+
+se-compro:
+  precio al que fue compra
+  fecha de compra
+  cantidad
+
+#relacion
+en-stock:
+#A evaluar tal ves esto pueda ir en el producto
+  cantidad de ejemplares en la bodega
+  marca
+  descripcion
+  precio
+
