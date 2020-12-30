@@ -1,0 +1,91 @@
+  /telefonos:
+    get:
+      summary: Obtener la lista de telefonos
+      description: Obtener la lista de telefonos
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TELEFONO'
+                  
+    post:
+      summary: Crea a un telefonos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TELEFONO'
+
+      responses:
+        '201':
+          description: Created Crea a un telefonos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO'
+                  
+
+  /telefonos/{id_Telefono}:
+    get:
+      summary: Obtener los datos de un telefonos
+      parameters:
+        - name: id_Telefono
+          in: path
+          description: id de un telefonos
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un telefonos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO'
+                
+    delete:
+      summary: Elimina los datos de un telefonos
+      parameters:
+        - name: id_Telefono
+          in: path
+          description: id de un telefonos
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO'
+                
+    put:
+      summary: Acyualiza a un telefonos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TELEFONO'
+      parameters:
+        - name: id_Telefono
+          in: path
+          description: id de un telefonos
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un telefonos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO'

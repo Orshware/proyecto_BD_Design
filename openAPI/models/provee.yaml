@@ -1,0 +1,23 @@
+PROVEE:
+    type: object
+    required:
+      - id_Provee
+      - cant_Compra
+      - precio_Compra
+      - fecha_Compra
+    properties:
+      id_Provee:
+        type: string
+        example: '17454878'
+
+      cant_Compra:
+        type: integer
+        example: 250
+
+      precio_Compra:
+        type: integer
+        example: 150
+
+      fecha_Compra:
+        type: string
+        example: '25-01-2020'

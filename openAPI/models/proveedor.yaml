@@ -1,0 +1,24 @@
+PROVEEDOR:
+    type: object
+    required:
+      - id_Proveedor
+      - razon_Social
+      - nombre
+      - ap_Pat
+      - ap_Mat
+    properties:
+      id_Proveedor:
+        type: string
+        example: '1265989'
+      razon_Social:
+        type: string
+        example: Vender los mejores productos para ayudar
+      nombre:
+        type: string
+        example: Rafael
+      ap_Pat:
+        type: string
+        example: Zamora
+      ap_Mat:
+        type: string
+        example: Ramírez

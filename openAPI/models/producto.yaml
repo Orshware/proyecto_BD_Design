@@ -1,0 +1,23 @@
+PRODUCTO:
+    type: object
+    required:
+      - id_Producto
+      - precio_Venta
+      - tipo_Articulo
+      - codigo_Barras
+    properties:
+      id_Producto:
+        type: string
+        example: '48956154'
+
+      precio_Venta:
+        type: integer
+        example: 250
+
+      tipo_Articulo:
+        type: string
+        example: 'PAPELERIA'
+
+      codigo_Barras:
+        type: string
+        example: '16884685646'

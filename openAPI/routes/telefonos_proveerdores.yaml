@@ -1,0 +1,91 @@
+  /telefonos_proveerdores:
+    get:
+      summary: Obtener la lista de telefonos_proveerdores
+      description: Obtener la lista de telefonos_proveerdores
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TELEFONO_PROVEEDOR'
+                  
+    post:
+      summary: Crea a un telefonos_proveerdores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TELEFONO_PROVEEDOR'
+
+      responses:
+        '201':
+          description: Created Crea a un telefonos_proveerdores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO_PROVEEDOR'
+                  
+
+  /telefonos_proveerdores/{id_Telefono_Proveedor}:
+    get:
+      summary: Obtener los datos de un telefonos_proveerdores
+      parameters:
+        - name: id_Telefono_Proveedor
+          in: path
+          description: id de un telefonos_proveerdores
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un telefonos_proveerdores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO_PROVEEDOR'
+                
+    delete:
+      summary: Elimina los datos de un telefonos_proveerdores
+      parameters:
+        - name: id_Telefono_Proveedor
+          in: path
+          description: id de un telefonos_proveerdores
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO_PROVEEDOR'
+                
+    put:
+      summary: Acyualiza a un telefonos_proveerdores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TELEFONO_PROVEEDOR'
+      parameters:
+        - name: id_Telefono_Proveedor
+          in: path
+          description: id de un telefonos_proveerdores
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un telefonos_proveerdores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO_PROVEEDOR'

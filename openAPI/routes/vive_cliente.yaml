@@ -1,0 +1,91 @@
+  /vive_clientes:
+    get:
+      summary: Obtener la lista de vive_clientes
+      description: Obtener la lista de vive_clientes
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VIVE_CLIENTE'
+                  
+    post:
+      summary: Crea a un vive_clientes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VIVE_CLIENTE'
+
+      responses:
+        '201':
+          description: Created Crea a un vive_clientes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_CLIENTE'
+                  
+
+  /vive_clientes/{id_Vive_Cliente}:
+    get:
+      summary: Obtener los datos de un vive_clientes
+      parameters:
+        - name: id_Vive_Cliente
+          in: path
+          description: id de un vive_clientes
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un vive_clientes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_CLIENTE'
+                
+    delete:
+      summary: Elimina los datos de un vive_clientes
+      parameters:
+        - name: id_Vive_Cliente
+          in: path
+          description: id de un vive_clientes
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_CLIENTE'
+                
+    put:
+      summary: Acyualiza a un vive_clientes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VIVE_CLIENTE'
+      parameters:
+        - name: id_Vive_Cliente
+          in: path
+          description: id de un vive_clientes
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un vive_clientes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_CLIENTE'

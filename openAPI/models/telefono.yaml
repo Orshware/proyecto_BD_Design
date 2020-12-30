@@ -1,0 +1,12 @@
+TELEFONO:
+    type: object
+    required:
+      - id_Telefono
+      - num_Telefono
+    properties:
+      id_Telefono:
+        type: string
+        example: '4568764'
+      num_Telefono:
+        type: integer
+        example: 5546789565

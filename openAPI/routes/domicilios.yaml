@@ -1,0 +1,91 @@
+  /domicilios:
+    get:
+      summary: Obtener la lista de domicilio
+      description: Obtener la lista de domicilio
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DOMICILIO'
+                  
+    post:
+      summary: Crea a un domicilio
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DOMICILIO'
+
+      responses:
+        '201':
+          description: Created Crea a un domicilio
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DOMICILIO'
+                  
+
+  /domicilios/{id_Domicilio}:
+    get:
+      summary: Obtener los datos de un domicilio
+      parameters:
+        - name: id_Domicilio
+          in: path
+          description: id de un domicilio
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un domicilio
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DOMICILIO'
+                
+    delete:
+      summary: Elimina los datos de un domicilio
+      parameters:
+        - name: id_Domicilio
+          in: path
+          description: id de un domicilio
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DOMICILIO'
+                
+    put:
+      summary: Acyualiza a un domicilio
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DOMICILIO'
+      parameters:
+        - name: id_Domicilio
+          in: path
+          description: id de un domicilio
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un domicilio
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DOMICILIO'

@@ -1,0 +1,33 @@
+DOMICILIO:
+    type: object
+    required:
+      - id_Domicilio
+      - estado
+      - colonia
+      - calle
+      - numero
+      - cp
+    properties:
+      id_Domicilio:
+        type: string
+        example: '12632235989'
+
+      estado:
+        type: string
+        example: '12657878'
+
+      colonia:
+        type: string
+        example: '12789989'
+
+      calle:
+        type: string
+        example: '12632235989'
+
+      numero:
+        type: integer
+        example: 181
+
+      cp:
+        type: integer
+        example: 57185

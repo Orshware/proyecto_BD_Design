@@ -1,0 +1,91 @@
+  /vive_proveedores:
+    get:
+      summary: Obtener la lista de vive_proveedores
+      description: Obtener la lista de vive_proveedores
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VIVE_PROVEEDOR'
+                  
+    post:
+      summary: Crea a un vive_proveedores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VIVE_PROVEEDOR'
+
+      responses:
+        '201':
+          description: Created Crea a un vive_proveedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_PROVEEDOR'
+                  
+
+  /vive_proveedores/{id_Vive_Proveedor}:
+    get:
+      summary: Obtener los datos de un vive_proveedores
+      parameters:
+        - name: id_Vive_Proveedor
+          in: path
+          description: id de un vive_proveedores
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un vive_proveedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_PROVEEDOR'
+                
+    delete:
+      summary: Elimina los datos de un vive_proveedores
+      parameters:
+        - name: id_Vive_Proveedor
+          in: path
+          description: id de un vive_proveedores
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_PROVEEDOR'
+                
+    put:
+      summary: Acyualiza a un vive_proveedores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VIVE_PROVEEDOR'
+      parameters:
+        - name: id_Vive_Proveedor
+          in: path
+          description: id de un vive_proveedores
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un vive_proveedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_PROVEEDOR'

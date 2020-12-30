@@ -1,0 +1,91 @@
+  /inventarios:
+    get:
+      summary: Obtener la lista de inventarios
+      description: Obtener la lista de inventarios
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/INVENTARIO'
+                  
+    post:
+      summary: Crea a un inventarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/INVENTARIO'
+
+      responses:
+        '201':
+          description: Created Crea a un inventarios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/INVENTARIO'
+                  
+
+  /inventarios/{id_Inventario}:
+    get:
+      summary: Obtener los datos de un inventarios
+      parameters:
+        - name: id_Inventario
+          in: path
+          description: id de un inventarios
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un inventarios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/INVENTARIO'
+                
+    delete:
+      summary: Elimina los datos de un inventarios
+      parameters:
+        - name: id_Inventario
+          in: path
+          description: id de un inventarios
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/INVENTARIO'
+                
+    put:
+      summary: Acyualiza a un inventarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/INVENTARIO'
+      parameters:
+        - name: id_Inventario
+          in: path
+          description: id de un inventarios
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un inventarios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/INVENTARIO'

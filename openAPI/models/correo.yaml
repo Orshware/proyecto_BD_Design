@@ -1,0 +1,13 @@
+CORREO:
+    type: object
+    required:
+      - id_Correo
+      - email
+    properties:
+      id_Correo:
+        type: string
+        example: '1648465158'
+
+      email:
+        type: string
+        example: 'ruben@gmail.com'

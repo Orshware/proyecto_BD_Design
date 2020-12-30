@@ -1,0 +1,91 @@
+  /vive_inventarios:
+    get:
+      summary: Obtener la lista de vive_inventarios
+      description: Obtener la lista de vive_inventarios
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VIVE_INVENTARIO'
+                  
+    post:
+      summary: Crea a un vive_inventarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VIVE_INVENTARIO'
+
+      responses:
+        '201':
+          description: Created Crea a un vive_inventarios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_INVENTARIO'
+                  
+
+  /vive_inventarios/{id_Vive_Inventario}:
+    get:
+      summary: Obtener los datos de un vive_inventarios
+      parameters:
+        - name: id_Vive_Inventario
+          in: path
+          description: id de un vive_inventarios
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un vive_inventarios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_INVENTARIO'
+                
+    delete:
+      summary: Elimina los datos de un vive_inventarios
+      parameters:
+        - name: id_Vive_Inventario
+          in: path
+          description: id de un vive_inventarios
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_INVENTARIO'
+                
+    put:
+      summary: Acyualiza a un vive_inventarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VIVE_INVENTARIO'
+      parameters:
+        - name: id_Vive_Inventario
+          in: path
+          description: id de un vive_inventarios
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un vive_inventarios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_INVENTARIO'

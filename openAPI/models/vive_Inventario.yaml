@@ -1,0 +1,18 @@
+VIVE_INVENTARIO:
+    type: object
+    required:
+      - id_Vive_Inventario
+      - id_Inventario
+      - id_Domicilio
+    properties:
+      id_Vive_Inventario:
+        type: string
+        example: '23164846'
+
+      id_Inventario:
+        type: string
+        example: '234897845649'
+
+      id_Domicilio:
+        type: string
+        example: '14489456856'

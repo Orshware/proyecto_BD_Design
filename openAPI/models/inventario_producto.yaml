@@ -1,0 +1,38 @@
+INVENTARIO_PRODUCTO:
+    type: object
+    required:
+      - id_Inventario_Producto
+      - id_Inventario
+      - id_Producto
+      - descripcion
+      - cantidad
+      - marca
+      - precio_Compra
+    properties:
+      id_Inventario_Producto:
+        type: string
+        example: '164561615'
+
+      id_Inventario:
+        type: string
+        example: '154751547'
+
+      id_Producto:
+        type: string
+        example: '78954822'
+
+      descripcion:
+        type: string
+        example: 'Papel de decoracion'
+
+      cantidad:
+        type: integer
+        example: 150
+
+      marca:
+        type: string
+        example: 'KIMBERLY'
+
+      precio_compra:
+        type: integer
+        example: 150

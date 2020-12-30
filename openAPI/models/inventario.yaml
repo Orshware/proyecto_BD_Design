@@ -1,0 +1,13 @@
+INVENTARIO:
+    type: object
+    required:
+      - id_Inventario
+      - id_Domicilio
+    properties:
+      id_Inventario:
+        type: string
+        example: '21646134'
+
+      id_Domicilio:
+        type: string
+        example: '15789496'

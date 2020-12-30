@@ -1,0 +1,91 @@
+  /correos:
+    get:
+      summary: Obtener la lista de correos
+      description: Obtener la lista de correos
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CORREOS'
+                  
+    post:
+      summary: Crea a un correos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CORREOS'
+
+      responses:
+        '201':
+          description: Created Crea a un correos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CORREOS'
+                  
+
+  /correos/{id_Correo}:
+    get:
+      summary: Obtener los datos de un correos
+      parameters:
+        - name: id_Correo
+          in: path
+          description: id de un correos
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un correos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CORREOS'
+                
+    delete:
+      summary: Elimina los datos de un correos
+      parameters:
+        - name: id_Correo
+          in: path
+          description: id de un correos
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CORREOS'
+                
+    put:
+      summary: Acyualiza a un correos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CORREOS'
+      parameters:
+        - name: id_Correo
+          in: path
+          description: id de un correos
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un correos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CORREOS'

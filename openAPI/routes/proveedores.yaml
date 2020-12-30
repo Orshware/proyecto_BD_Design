@@ -1,0 +1,91 @@
+  /proveedores:
+    get:
+      summary: Obtener la lista de proveedores
+      description: Obtener la lista de proveedores
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PROVEEDOR'
+                  
+    post:
+      summary: Crea a un proveedores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PROVEEDOR'
+
+      responses:
+        '201':
+          description: Created Crea a un proveedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEEDOR'
+                  
+
+  /proveedores/{id_Proveedor}:
+    get:
+      summary: Obtener los datos de un proveedores
+      parameters:
+        - name: id_Proveedor
+          in: path
+          description: id de un proveedores
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un proveedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEEDOR'
+                
+    delete:
+      summary: Elimina los datos de un proveedores
+      parameters:
+        - name: id_Proveedor
+          in: path
+          description: id de un proveedores
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEEDOR'
+                
+    put:
+      summary: Acyualiza a un proveedores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PROVEEDOR'
+      parameters:
+        - name: id_Proveedor
+          in: path
+          description: id de un proveedores
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un proveedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEEDOR'

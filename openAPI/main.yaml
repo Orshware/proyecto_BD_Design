@@ -1,0 +1,1731 @@
+openapi: 3.0.0
+info:
+  description: Este es un proyecto de una papeleria para la Materia de Base de Datos
+  version: 1.0.0
+  title: Papeleria-System
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: orshware@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: http://api.papeleria-system.com/v1
+    description: Optional server description, e.g. Main (production) server
+  - url: http://staging-api.papeleria-system.com
+    description: Optional server description, e.g. Internal staging server for testing
+
+tags:
+- name: pet
+  description: Everything about your Pets
+  externalDocs:
+    description: Find out more
+    url: http://swagger.io
+- name: store
+  description: Access to Petstore orders
+- name: user
+  description: Operations about user
+  externalDocs:
+    description: Find out more about our store
+    url: http://swagger.io
+    
+paths:
+  /clientes:
+    get:
+      summary: Obtener la lista de clientes
+      description: Obtener la lista de clientes
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CLIENTE'
+                  
+    post:
+      summary: Crea a un cliente
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CLIENTE'
+
+      responses:
+        '201':
+          description: Created Crea a un cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CLIENTE'
+                  
+
+  /clientes/{id_Cliente}:
+    get:
+      summary: Obtener los datos de un cliente
+      parameters:
+        - name: id_Cliente
+          in: path
+          description: id de un cliente
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CLIENTE'
+                
+    delete:
+      summary: Elimina los datos de un cliente
+      parameters:
+        - name: id_Cliente
+          in: path
+          description: id de un cliente
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CLIENTE'
+                
+    put:
+      summary: Acyualiza a un cliente
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CLIENTE'
+      parameters:
+        - name: id_Cliente
+          in: path
+          description: id de un cliente
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CLIENTE'  
+                
+  /correos_clientes:
+    get:
+      summary: Obtener la lista de correos_clientes
+      description: Obtener la lista de correos_clientes
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CORREO_CLIENTE'
+                  
+    post:
+      summary: Crea a un correos_clientes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CORREO_CLIENTE'
+
+      responses:
+        '201':
+          description: Created Crea a un correos_clientes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CORREO_CLIENTE'
+                  
+
+  /correos_clientes/{id_Correo_Cliente}:
+    get:
+      summary: Obtener los datos de un correos_clientes
+      parameters:
+        - name: id_Correo_Cliente
+          in: path
+          description: id de un correos_clientes
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un correos_clientes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CORREO_CLIENTE'
+                
+    delete:
+      summary: Elimina los datos de un correos_clientes
+      parameters:
+        - name: id_Correo_Cliente
+          in: path
+          description: id de un correos_clientes
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CORREO_CLIENTE'
+                
+    put:
+      summary: Acyualiza a un correos_clientes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CORREO_CLIENTE'
+      parameters:
+        - name: id_Correo_Cliente
+          in: path
+          description: id de un correos_clientes
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un correos_clientes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CORREO_CLIENTE'  
+  /correos:
+    get:
+      summary: Obtener la lista de correos
+      description: Obtener la lista de correos
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CORREO'
+                  
+    post:
+      summary: Crea a un correos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CORREO'
+
+      responses:
+        '201':
+          description: Created Crea a un correos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CORREO'
+                  
+
+  /correos/{id_Correo}:
+    get:
+      summary: Obtener los datos de un correos
+      parameters:
+        - name: id_Correo
+          in: path
+          description: id de un correos
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un correos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CORREO'
+                
+    delete:
+      summary: Elimina los datos de un correos
+      parameters:
+        - name: id_Correo
+          in: path
+          description: id de un correos
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CORREO'
+                
+    put:
+      summary: Acyualiza a un correos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CORREO'
+      parameters:
+        - name: id_Correo
+          in: path
+          description: id de un correos
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un correos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CORREO'  
+  
+  /domicilios:
+    get:
+      summary: Obtener la lista de domicilio
+      description: Obtener la lista de domicilio
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DOMICILIO'
+                  
+    post:
+      summary: Crea a un domicilio
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DOMICILIO'
+
+      responses:
+        '201':
+          description: Created Crea a un domicilio
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DOMICILIO'
+                  
+
+  /domicilios/{id_Domicilio}:
+    get:
+      summary: Obtener los datos de un domicilio
+      parameters:
+        - name: id_Domicilio
+          in: path
+          description: id de un domicilio
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un domicilio
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DOMICILIO'
+                
+    delete:
+      summary: Elimina los datos de un domicilio
+      parameters:
+        - name: id_Domicilio
+          in: path
+          description: id de un domicilio
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DOMICILIO'
+                
+    put:
+      summary: Acyualiza a un domicilio
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DOMICILIO'
+      parameters:
+        - name: id_Domicilio
+          in: path
+          description: id de un domicilio
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un domicilio
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DOMICILIO'  
+  
+  /inventario_productos:
+    get:
+      summary: Obtener la lista de inventario_productos
+      description: Obtener la lista de inventario_productos
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/INVENTARIO_PRODUCTO'
+                  
+    post:
+      summary: Crea a un inventario_productos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/INVENTARIO_PRODUCTO'
+
+      responses:
+        '201':
+          description: Created Crea a un inventario_productos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/INVENTARIO_PRODUCTO'
+                  
+
+  /inventario_productos/{id_Inventario_Producto}:
+    get:
+      summary: Obtener los datos de un inventario_productos
+      parameters:
+        - name: id_Inventario_Producto
+          in: path
+          description: id de un inventario_productos
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un inventario_productos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/INVENTARIO_PRODUCTO'
+                
+    delete:
+      summary: Elimina los datos de un inventario_productos
+      parameters:
+        - name: id_Inventario_Producto
+          in: path
+          description: id de un inventario_productos
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/INVENTARIO_PRODUCTO'
+                
+    put:
+      summary: Acyualiza a un inventario_productos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/INVENTARIO_PRODUCTO'
+      parameters:
+        - name: id_Inventario_Producto
+          in: path
+          description: id de un inventario_productos
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un inventario_productos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/INVENTARIO_PRODUCTO'  
+  
+  /inventarios:
+    get:
+      summary: Obtener la lista de inventarios
+      description: Obtener la lista de inventarios
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/INVENTARIO'
+                  
+    post:
+      summary: Crea a un inventarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/INVENTARIO'
+
+      responses:
+        '201':
+          description: Created Crea a un inventarios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/INVENTARIO'
+                  
+
+  /inventarios/{id_Inventario}:
+    get:
+      summary: Obtener los datos de un inventarios
+      parameters:
+        - name: id_Inventario
+          in: path
+          description: id de un inventarios
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un inventarios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/INVENTARIO'
+                
+    delete:
+      summary: Elimina los datos de un inventarios
+      parameters:
+        - name: id_Inventario
+          in: path
+          description: id de un inventarios
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/INVENTARIO'
+                
+    put:
+      summary: Acyualiza a un inventarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/INVENTARIO'
+      parameters:
+        - name: id_Inventario
+          in: path
+          description: id de un inventarios
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un inventarios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/INVENTARIO'  
+  
+  /productos:
+    get:
+      summary: Obtener la lista de productos
+      description: Obtener la lista de productos
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PRODUCTO'
+                  
+    post:
+      summary: Crea a un productos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PRODUCTO'
+
+      responses:
+        '201':
+          description: Created Crea a un productos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PRODUCTO'
+                  
+
+  /productos/{id_Producto}:
+    get:
+      summary: Obtener los datos de un productos
+      parameters:
+        - name: id_Producto
+          in: path
+          description: id de un productos
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un productos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PRODUCTO'
+                
+    delete:
+      summary: Elimina los datos de un productos
+      parameters:
+        - name: id_Producto
+          in: path
+          description: id de un productos
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PRODUCTO'
+                
+    put:
+      summary: Acyualiza a un productos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PRODUCTO'
+      parameters:
+        - name: id_Producto
+          in: path
+          description: id de un productos
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un productos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PRODUCTO'  
+                
+  /proveedores:
+    get:
+      summary: Obtener la lista de proveedores
+      description: Obtener la lista de proveedores
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PROVEEDOR'
+                  
+    post:
+      summary: Crea a un proveedores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PROVEEDOR'
+
+      responses:
+        '201':
+          description: Created Crea a un proveedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEEDOR'
+                  
+
+  /proveedores/{id_Proveedor}:
+    get:
+      summary: Obtener los datos de un proveedores
+      parameters:
+        - name: id_Proveedor
+          in: path
+          description: id de un proveedores
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un proveedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEEDOR'
+                
+    delete:
+      summary: Elimina los datos de un proveedores
+      parameters:
+        - name: id_Proveedor
+          in: path
+          description: id de un proveedores
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEEDOR'
+                
+    put:
+      summary: Acyualiza a un proveedores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PROVEEDOR'
+      parameters:
+        - name: id_Proveedor
+          in: path
+          description: id de un proveedores
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un proveedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEEDOR'  
+                
+  /proveer:
+    get:
+      summary: Obtener la lista de proveer
+      description: Obtener la lista de proveer
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PROVEE'
+                  
+    post:
+      summary: Crea a un proveer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PROVEE'
+
+      responses:
+        '201':
+          description: Created Crea a un proveer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEE'
+                  
+
+  /proveer/{id_Provee}:
+    get:
+      summary: Obtener los datos de un proveer
+      parameters:
+        - name: id_Provee
+          in: path
+          description: id de un proveer
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un proveer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEE'
+                
+    delete:
+      summary: Elimina los datos de un proveer
+      parameters:
+        - name: id_Provee
+          in: path
+          description: id de un proveer
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEE'
+                
+    put:
+      summary: Acyualiza a un proveer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PROVEE'
+      parameters:
+        - name: id_Provee
+          in: path
+          description: id de un proveer
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un proveer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEE'  
+                
+  /telefonos_proveerdores:
+    get:
+      summary: Obtener la lista de telefonos_proveerdores
+      description: Obtener la lista de telefonos_proveerdores
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TELEFONO_PROVEEDOR'
+                  
+    post:
+      summary: Crea a un telefonos_proveerdores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TELEFONO_PROVEEDOR'
+
+      responses:
+        '201':
+          description: Created Crea a un telefonos_proveerdores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO_PROVEEDOR'
+                  
+
+  /telefonos_proveerdores/{id_Telefono_Proveedor}:
+    get:
+      summary: Obtener los datos de un telefonos_proveerdores
+      parameters:
+        - name: id_Telefono_Proveedor
+          in: path
+          description: id de un telefonos_proveerdores
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un telefonos_proveerdores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO_PROVEEDOR'
+                
+    delete:
+      summary: Elimina los datos de un telefonos_proveerdores
+      parameters:
+        - name: id_Telefono_Proveedor
+          in: path
+          description: id de un telefonos_proveerdores
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO_PROVEEDOR'
+                
+    put:
+      summary: Acyualiza a un telefonos_proveerdores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TELEFONO_PROVEEDOR'
+      parameters:
+        - name: id_Telefono_Proveedor
+          in: path
+          description: id de un telefonos_proveerdores
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un telefonos_proveerdores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO_PROVEEDOR'  
+  
+  /telefonos:
+    get:
+      summary: Obtener la lista de telefonos
+      description: Obtener la lista de telefonos
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TELEFONO'
+                  
+    post:
+      summary: Crea a un telefonos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TELEFONO'
+
+      responses:
+        '201':
+          description: Created Crea a un telefonos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO'
+                  
+
+  /telefonos/{id_Telefono}:
+    get:
+      summary: Obtener los datos de un telefonos
+      parameters:
+        - name: id_Telefono
+          in: path
+          description: id de un telefonos
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un telefonos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO'
+                
+    delete:
+      summary: Elimina los datos de un telefonos
+      parameters:
+        - name: id_Telefono
+          in: path
+          description: id de un telefonos
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO'
+                
+    put:
+      summary: Acyualiza a un telefonos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TELEFONO'
+      parameters:
+        - name: id_Telefono
+          in: path
+          description: id de un telefonos
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un telefonos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TELEFONO'  
+                
+  /ventas:
+    get:
+      summary: Obtener la lista de ventas
+      description: Obtener la lista de ventas
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VENTA'
+                  
+    post:
+      summary: Crea a un ventas
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VENTA'
+
+      responses:
+        '201':
+          description: Created Crea a un ventas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VENTA'
+                  
+
+  /ventas/{id_Venta}:
+    get:
+      summary: Obtener los datos de un ventas
+      parameters:
+        - name: id_Venta
+          in: path
+          description: id de un ventas
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un ventas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VENTA'
+                
+    delete:
+      summary: Elimina los datos de un ventas
+      parameters:
+        - name: id_Venta
+          in: path
+          description: id de un ventas
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VENTA'
+                
+    put:
+      summary: Acyualiza a un ventas
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VENTA'
+      parameters:
+        - name: id_Venta
+          in: path
+          description: id de un ventas
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un ventas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VENTA'  
+                
+  /vive_clientes:
+    get:
+      summary: Obtener la lista de vive_clientes
+      description: Obtener la lista de vive_clientes
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VIVE_CLIENTE'
+                  
+    post:
+      summary: Crea a un vive_clientes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VIVE_CLIENTE'
+
+      responses:
+        '201':
+          description: Created Crea a un vive_clientes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_CLIENTE'
+                  
+
+  /vive_clientes/{id_Vive_Cliente}:
+    get:
+      summary: Obtener los datos de un vive_clientes
+      parameters:
+        - name: id_Vive_Cliente
+          in: path
+          description: id de un vive_clientes
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un vive_clientes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_CLIENTE'
+                
+    delete:
+      summary: Elimina los datos de un vive_clientes
+      parameters:
+        - name: id_Vive_Cliente
+          in: path
+          description: id de un vive_clientes
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_CLIENTE'
+                
+    put:
+      summary: Acyualiza a un vive_clientes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VIVE_CLIENTE'
+      parameters:
+        - name: id_Vive_Cliente
+          in: path
+          description: id de un vive_clientes
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un vive_clientes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_CLIENTE'  
+                
+  /vive_inventarios:
+    get:
+      summary: Obtener la lista de vive_inventarios
+      description: Obtener la lista de vive_inventarios
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VIVE_INVENTARIO'
+                  
+    post:
+      summary: Crea a un vive_inventarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VIVE_INVENTARIO'
+
+      responses:
+        '201':
+          description: Created Crea a un vive_inventarios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_INVENTARIO'
+                  
+
+  /vive_inventarios/{id_Vive_Inventario}:
+    get:
+      summary: Obtener los datos de un vive_inventarios
+      parameters:
+        - name: id_Vive_Inventario
+          in: path
+          description: id de un vive_inventarios
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un vive_inventarios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_INVENTARIO'
+                
+    delete:
+      summary: Elimina los datos de un vive_inventarios
+      parameters:
+        - name: id_Vive_Inventario
+          in: path
+          description: id de un vive_inventarios
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_INVENTARIO'
+                
+    put:
+      summary: Acyualiza a un vive_inventarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VIVE_INVENTARIO'
+      parameters:
+        - name: id_Vive_Inventario
+          in: path
+          description: id de un vive_inventarios
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un vive_inventarios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_INVENTARIO'  
+                
+  /vive_proveedores:
+    get:
+      summary: Obtener la lista de vive_proveedores
+      description: Obtener la lista de vive_proveedores
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VIVE_PROVEEDOR'
+                  
+    post:
+      summary: Crea a un vive_proveedores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VIVE_PROVEEDOR'
+
+      responses:
+        '201':
+          description: Created Crea a un vive_proveedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_PROVEEDOR'
+                  
+
+  /vive_proveedores/{id_Vive_Proveedor}:
+    get:
+      summary: Obtener los datos de un vive_proveedores
+      parameters:
+        - name: id_Vive_Proveedor
+          in: path
+          description: id de un vive_proveedores
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un vive_proveedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_PROVEEDOR'
+                
+    delete:
+      summary: Elimina los datos de un vive_proveedores
+      parameters:
+        - name: id_Vive_Proveedor
+          in: path
+          description: id de un vive_proveedores
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_PROVEEDOR'
+                
+    put:
+      summary: Acyualiza a un vive_proveedores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VIVE_PROVEEDOR'
+      parameters:
+        - name: id_Vive_Proveedor
+          in: path
+          description: id de un vive_proveedores
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un vive_proveedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VIVE_PROVEEDOR'
+components:
+  schemas:
+    
+    CLIENTE:
+        type: object
+        required:
+          - id_Cliente
+          - razon_Social
+          - nombre
+          - ap_Pat 
+          - ap_Mat
+        properties:
+          id_Cliente:
+            type: string
+            example: '12632235989'
+    
+          razon_Social:
+            type: string
+            example: 'Ayudar a los pequeños negocios'
+    
+          nombre:
+            type: string
+            example: 'Ruben'
+    
+          ap_Pat:
+            type: string
+            example: 'Martínez'
+    
+          ap_Mat:
+            type: string
+            example: 'Pérez'
+    CORREO_CLIENTE:
+        type: object
+        required:
+          - id_Correo_Cliente
+          - id_Cliente
+          - id_Correo
+        properties:
+          id_Correo_Cliente:
+            type: string
+            example: '12632235989'
+    
+          id_Cliente:
+            type: string
+            example: '5478431386'
+    
+          id_Correo:
+            type: string
+            example: '14794613548'
+    CORREO:
+        type: object
+        required:
+          - id_Correo
+          - email
+        properties:
+          id_Correo:
+            type: string
+            example: '1648465158'
+    
+          email:
+            type: string
+            example: 'ruben@gmail.com'
+    DOMICILIO:
+        type: object
+        required:
+          - id_Domicilio
+          - estado
+          - colonia
+          - calle
+          - numero
+          - cp
+        properties:
+          id_Domicilio:
+            type: string
+            example: '12632235989'
+    
+          estado:
+            type: string
+            example: '12657878'
+    
+          colonia:
+            type: string
+            example: '12789989'
+    
+          calle:
+            type: string
+            example: '12632235989'
+    
+          numero:
+            type: integer
+            example: 181
+    
+          cp:
+            type: integer
+            example: 57185
+    INVENTARIO_PRODUCTO:
+        type: object
+        required:
+          - id_Inventario_Producto
+          - id_Inventario
+          - id_Producto
+          - descripcion
+          - cantidad
+          - marca
+          - precio_Compra
+        properties:
+          id_Inventario_Producto:
+            type: string
+            example: '164561615'
+    
+          id_Inventario:
+            type: string
+            example: '154751547'
+    
+          id_Producto:
+            type: string
+            example: '78954822'
+    
+          descripcion:
+            type: string
+            example: 'Papel de decoracion'
+    
+          cantidad:
+            type: integer
+            example: 150
+    
+          marca:
+            type: string
+            example: 'KIMBERLY'
+    
+          precio_compra:
+            type: integer
+            example: 150
+    INVENTARIO:
+        type: object
+        required:
+          - id_Inventario
+          - id_Domicilio
+        properties:
+          id_Inventario:
+            type: string
+            example: '21646134'
+    
+          id_Domicilio:
+            type: string
+            example: '15789496'
+    PRODUCTO:
+        type: object
+        required:
+          - id_Producto
+          - precio_Venta
+          - tipo_Articulo
+          - codigo_Barras
+        properties:
+          id_Producto:
+            type: string
+            example: '48956154'
+    
+          precio_Venta:
+            type: integer
+            example: 250
+    
+          tipo_Articulo:
+            type: string
+            example: 'PAPELERIA'
+    
+          codigo_Barras:
+            type: string
+            example: '16884685646'
+    PROVEEDOR:
+        type: object
+        required:
+          - id_Proveedor
+          - razon_Social
+          - nombre
+          - ap_Pat
+          - ap_Mat
+        properties:
+          id_Proveedor:
+            type: string
+            example: '1265989'
+          razon_Social:
+            type: string
+            example: Vender los mejores productos para ayudar
+          nombre:
+            type: string
+            example: Rafael
+          ap_Pat:
+            type: string
+            example: Zamora
+          ap_Mat:
+            type: string
+            example: Ramírez
+    PROVEE:
+        type: object
+        required:
+          - id_Provee
+          - cant_Compra
+          - precio_Compra
+          - fecha_Compra
+        properties:
+          id_Provee:
+            type: string
+            example: '17454878'
+    
+          cant_Compra:
+            type: integer
+            example: 250
+    
+          precio_Compra:
+            type: integer
+            example: 150
+    
+          fecha_Compra:
+            type: string
+            example: '25-01-2020'
+    TELEFONO_PROVEEDOR:
+        type: object
+        required:
+          - id_Telefono_Proveedor
+          - id_Telefono
+          - id_Proveedor
+        properties:
+          id_Telefono_Proveedor:
+            type: string
+            example: '4568764'
+          id_Telefono:
+            type: string
+            example: '5546789565'
+          id_Proveedor:
+            type: string
+            example: '5546789565'
+    TELEFONO:
+        type: object
+        required:
+          - id_Telefono
+          - num_Telefono
+        properties:
+          id_Telefono:
+            type: string
+            example: '4568764'
+          num_Telefono:
+            type: integer
+            example: 5546789565
+    VENTA:
+        type: object
+        required:
+          - id_Venta
+          - cant_Art_Total
+          - precio_Total
+          - fecha_Venta
+        properties:
+          id_Venta:
+            type: string
+            example: '448413164'
+    
+          cant_Art_Total:
+            type: integer
+            example: 15
+    
+          precio_Total:
+            type: integer
+            example: 800
+    
+          fecha_Venta:
+            type: string
+            example: '26-01-2020'
+    VIVE_CLIENTE:
+        type: object
+        required:
+          - id_Vive_Cliente
+          - id_Cliente
+          - id_Domicilio
+        properties:
+          id_Vive_Cliente:
+            type: string
+            example: '12632235989'
+    
+          id_Cliente:
+            type: string
+            example: '12657878'
+    
+          id_Domicilio:
+            type: string
+            example: '12789989'
+    VIVE_INVENTARIO:
+        type: object
+        required:
+          - id_Vive_Inventario
+          - id_Inventario
+          - id_Domicilio
+        properties:
+          id_Vive_Inventario:
+            type: string
+            example: '23164846'
+    
+          id_Inventario:
+            type: string
+            example: '234897845649'
+    
+          id_Domicilio:
+            type: string
+            example: '14489456856'
+    VIVE_PROVEEDOR:
+        type: object
+        required:
+          - id_Vive_Proveedor
+          - id_Proveedor
+          - id_Domicilio
+        properties:
+          id_Vive_Proveedor:
+            type: string
+            example: '12632235989'
+    
+          id_Proveedor:
+            type: string
+            example: '12657878'
+    
+          id_Domicilio:
+            type: string
+            example: '12789989'

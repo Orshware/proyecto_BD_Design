@@ -1,0 +1,91 @@
+  /clientes:
+    get:
+      summary: Obtener la lista de clientes
+      description: Obtener la lista de clientes
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CLIENTE'
+                  
+    post:
+      summary: Crea a un cliente
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CLIENTE'
+
+      responses:
+        '201':
+          description: Created Crea a un cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CLIENTE'
+                  
+
+  /clientes/{id_Cliente}:
+    get:
+      summary: Obtener los datos de un cliente
+      parameters:
+        - name: id_Cliente
+          in: path
+          description: id de un cliente
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CLIENTE'
+                
+    delete:
+      summary: Elimina los datos de un cliente
+      parameters:
+        - name: id_Cliente
+          in: path
+          description: id de un cliente
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CLIENTE'
+                
+    put:
+      summary: Acyualiza a un cliente
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CLIENTE'
+      parameters:
+        - name: id_Cliente
+          in: path
+          description: id de un cliente
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CLIENTE'

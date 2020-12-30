@@ -1,0 +1,23 @@
+VENTA:
+    type: object
+    required:
+      - id_Venta
+      - cant_Art_Total
+      - precio_Total
+      - fecha_Venta
+    properties:
+      id_Venta:
+        type: string
+        example: '448413164'
+
+      cant_Art_Total:
+        type: integer
+        example: 15
+
+      precio_Total:
+        type: integer
+        example: 800
+
+      fecha_Venta:
+        type: string
+        example: '26-01-2020'

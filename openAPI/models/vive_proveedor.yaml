@@ -1,0 +1,18 @@
+VIVE_PROVEEDOR:
+    type: object
+    required:
+      - id_Vive_Proveedor
+      - id_Proveedor
+      - id_Domicilio
+    properties:
+      id_Vive_Proveedor:
+        type: string
+        example: '12632235989'
+
+      id_Proveedor:
+        type: string
+        example: '12657878'
+
+      id_Domicilio:
+        type: string
+        example: '12789989'

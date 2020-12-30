@@ -1,0 +1,28 @@
+CLIENTE:
+    type: object
+    required:
+      - id_Cliente
+      - razon_Social
+      - nombre
+      - ap_Pat 
+      - ap_Mat
+    properties:
+      id_Cliente:
+        type: string
+        example: '12632235989'
+
+      razon_Social:
+        type: string
+        example: 'Ayudar a los pequeños negocios'
+
+      nombre:
+        type: string
+        example: 'Ruben'
+
+      ap_Pat:
+        type: string
+        example: 'Martínez'
+
+      ap_Mat:
+        type: string
+        example: 'Pérez'

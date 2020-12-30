@@ -1,0 +1,18 @@
+VIVE_CLIENTE:
+    type: object
+    required:
+      - id_Vive_Cliente
+      - id_Cliente
+      - id_Domicilio
+    properties:
+      id_Vive_Cliente:
+        type: string
+        example: '12632235989'
+
+      id_Cliente:
+        type: string
+        example: '12657878'
+
+      id_Domicilio:
+        type: string
+        example: '12789989'

@@ -1,0 +1,91 @@
+  /proveer:
+    get:
+      summary: Obtener la lista de proveer
+      description: Obtener la lista de proveer
+      responses:
+        '200':
+          description: éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PROVEE'
+                  
+    post:
+      summary: Crea a un proveer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PROVEE'
+
+      responses:
+        '201':
+          description: Created Crea a un proveer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEE'
+                  
+
+  /proveer/{id_Provee}:
+    get:
+      summary: Obtener los datos de un proveer
+      parameters:
+        - name: id_Provee
+          in: path
+          description: id de un proveer
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '201':
+          description: Crea a un proveer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEE'
+                
+    delete:
+      summary: Elimina los datos de un proveer
+      parameters:
+        - name: id_Provee
+          in: path
+          description: id de un proveer
+          required: true
+          schema:
+            type: string
+            
+      responses:
+        '200':
+          description: Eliminacion con exito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEE'
+                
+    put:
+      summary: Acyualiza a un proveer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PROVEE'
+      parameters:
+        - name: id_Provee
+          in: path
+          description: id de un proveer
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Created Crea a un proveer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PROVEE'

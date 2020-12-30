@@ -1,0 +1,318 @@
+    CLIENTE:
+        type: object
+        required:
+          - id_Cliente
+          - razon_Social
+          - nombre
+          - ap_Pat 
+          - ap_Mat
+        properties:
+          id_Cliente:
+            type: string
+            example: '12632235989'
+    
+          razon_Social:
+            type: string
+            example: 'Ayudar a los pequeños negocios'
+    
+          nombre:
+            type: string
+            example: 'Ruben'
+    
+          ap_Pat:
+            type: string
+            example: 'Martínez'
+    
+          ap_Mat:
+            type: string
+            example: 'Pérez'
+    CORREO_CLIENTE:
+        type: object
+        required:
+          - id_Correo_Cliente
+          - id_Cliente
+          - id_Correo
+        properties:
+          id_Correo_Cliente:
+            type: string
+            example: '12632235989'
+    
+          id_Cliente:
+            type: string
+            example: '5478431386'
+    
+          id_Correo:
+            type: string
+            example: '14794613548'
+    CORREO:
+        type: object
+        required:
+          - id_Correo
+          - email
+        properties:
+          id_Correo:
+            type: string
+            example: '1648465158'
+    
+          email:
+            type: string
+            example: 'ruben@gmail.com'
+    DOMICILIO:
+        type: object
+        required:
+          - id_Domicilio
+          - estado
+          - colonia
+          - calle
+          - numero
+          - cp
+        properties:
+          id_Domicilio:
+            type: string
+            example: '12632235989'
+    
+          estado:
+            type: string
+            example: '12657878'
+    
+          colonia:
+            type: string
+            example: '12789989'
+    
+          calle:
+            type: string
+            example: '12632235989'
+    
+          numero:
+            type: integer
+            example: 181
+    
+          cp:
+            type: integer
+            example: 57185
+    INVENTARIO_PRODUCTO:
+        type: object
+        required:
+          - id_Inventario_Producto
+          - id_Inventario
+          - id_Producto
+          - descripcion
+          - cantidad
+          - marca
+          - precio_Compra
+        properties:
+          id_Inventario_Producto:
+            type: string
+            example: '164561615'
+    
+          id_Inventario:
+            type: string
+            example: '154751547'
+    
+          id_Producto:
+            type: string
+            example: '78954822'
+    
+          descripcion:
+            type: string
+            example: 'Papel de decoracion'
+    
+          cantidad:
+            type: integer
+            example: 150
+    
+          marca:
+            type: string
+            example: 'KIMBERLY'
+    
+          precio_compra:
+            type: integer
+            example: 150
+    INVENTARIO:
+        type: object
+        required:
+          - id_Inventario
+          - id_Domicilio
+        properties:
+          id_Inventario:
+            type: string
+            example: '21646134'
+    
+          id_Domicilio:
+            type: string
+            example: '15789496'
+    PRODUCTO:
+        type: object
+        required:
+          - id_Producto
+          - precio_Venta
+          - tipo_Articulo
+          - codigo_Barras
+        properties:
+          id_Producto:
+            type: string
+            example: '48956154'
+    
+          precio_Venta:
+            type: integer
+            example: 250
+    
+          tipo_Articulo:
+            type: string
+            example: 'PAPELERIA'
+    
+          codigo_Barras:
+            type: string
+            example: '16884685646'
+    PROVEEDOR:
+        type: object
+        required:
+          - id_Proveedor
+          - razon_Social
+          - nombre
+          - ap_Pat
+          - ap_Mat
+        properties:
+          id_Proveedor:
+            type: string
+            example: '1265989'
+          razon_Social:
+            type: string
+            example: Vender los mejores productos para ayudar
+          nombre:
+            type: string
+            example: Rafael
+          ap_Pat:
+            type: string
+            example: Zamora
+          ap_Mat:
+            type: string
+            example: Ramírez
+    PROVEE:
+        type: object
+        required:
+          - id_Provee
+          - cant_Compra
+          - precio_Compra
+          - fecha_Compra
+        properties:
+          id_Provee:
+            type: string
+            example: '17454878'
+    
+          cant_Compra:
+            type: integer
+            example: 250
+    
+          precio_Compra:
+            type: integer
+            example: 150
+    
+          fecha_Compra:
+            type: string
+            example: '25-01-2020'
+    TELEFONO_PROVEEDOR:
+        type: object
+        required:
+          - id_Telefono_Proveedor
+          - id_Telefono
+          - id_Proveedor
+        properties:
+          id_Telefono_Proveedor:
+            type: string
+            example: '4568764'
+          id_Telefono:
+            type: string
+            example: '5546789565'
+          id_Proveedor:
+            type: string
+            example: '5546789565'
+    TELEFONO:
+        type: object
+        required:
+          - id_Telefono
+          - num_Telefono
+        properties:
+          id_Telefono:
+            type: string
+            example: '4568764'
+          num_Telefono:
+            type: integer
+            example: 5546789565
+    VENTA:
+        type: object
+        required:
+          - id_Venta
+          - cant_Art_Total
+          - precio_Total
+          - fecha_Venta
+        properties:
+          id_Venta:
+            type: string
+            example: '448413164'
+    
+          cant_Art_Total:
+            type: integer
+            example: 15
+    
+          precio_Total:
+            type: integer
+            example: 800
+    
+          fecha_Venta:
+            type: string
+            example: '26-01-2020'
+    VIVE_CLIENTE:
+        type: object
+        required:
+          - id_Vive_Cliente
+          - id_Cliente
+          - id_Domicilio
+        properties:
+          id_Vive_Cliente:
+            type: string
+            example: '12632235989'
+    
+          id_Cliente:
+            type: string
+            example: '12657878'
+    
+          id_Domicilio:
+            type: string
+            example: '12789989'
+    VIVE_INVENTARIO:
+        type: object
+        required:
+          - id_Vive_Inventario
+          - id_Inventario
+          - id_Domicilio
+        properties:
+          id_Vive_Inventario:
+            type: string
+            example: '23164846'
+    
+          id_Inventario:
+            type: string
+            example: '234897845649'
+    
+          id_Domicilio:
+            type: string
+            example: '14489456856'
+    VIVE_PROVEEDOR:
+        type: object
+        required:
+          - id_Vive_Proveedor
+          - id_Proveedor
+          - id_Domicilio
+        properties:
+          id_Vive_Proveedor:
+            type: string
+            example: '12632235989'
+    
+          id_Proveedor:
+            type: string
+            example: '12657878'
+    
+          id_Domicilio:
+            type: string
+            example: '12789989'

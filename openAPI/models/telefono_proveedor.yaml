@@ -1,0 +1,16 @@
+TELEFONO_PROVEEDOR:
+    type: object
+    required:
+      - id_Telefono_Proveedor
+      - id_Telefono
+      - id_Proveedor
+    properties:
+      id_Telefono_Proveedor:
+        type: string
+        example: '4568764'
+      id_Telefono:
+        type: string
+        example: '5546789565'
+      id_Proveedor:
+        type: string
+        example: '5546789565'
